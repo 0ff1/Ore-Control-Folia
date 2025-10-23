@@ -40,7 +40,7 @@ public class BlockStateMatchRuleTestScreen {
                                         .withAction(clickAction -> {
                                             PlayerGuiData playerGuiData = guiValuesHolder.guiManager().getPlayerGuiData(clickAction.getPlayer());
                                             playerGuiData.setHandleInventoryClosing(false);
-                                            guiValuesHolder.plugin().getServer().getScheduler().runTask(guiValuesHolder.plugin(), () -> clickAction.getPlayer().closeInventory());
+                                            clickAction.getPlayer().closeInventory();
                                             guiValuesHolder.blockInteractionManager().createBasicBlockDataInteraction(clickAction.getPlayer(), blockData -> {
                                                 BlockStateMatchRuleTest ruleTest = getRuleTest(guiValuesHolder, clickAction.getPlayer());
                                                 ruleTest.setBlockData(blockData);

@@ -12,3 +12,4 @@ commands:
     permission: "ore.control"
     description: "Open the ore control gui"
     usage: "Usage: /<command>"
+folia-supported: true

@@ -58,7 +58,7 @@ public class TargetBlockStateScreen {
                                         .withAction(clickAction -> {
                                             PlayerGuiData playerGuiData = guiValuesHolder.guiManager().getPlayerGuiData(clickAction.getPlayer());
                                             playerGuiData.setHandleInventoryClosing(false);
-                                            guiValuesHolder.plugin().getServer().getScheduler().runTask(guiValuesHolder.plugin(), () -> clickAction.getPlayer().closeInventory());
+                                            clickAction.getPlayer().closeInventory();
                                             guiValuesHolder.blockInteractionManager().createBasicBlockDataInteraction(clickAction.getPlayer(), blockData -> {
                                                 TargetBlockState targetBlockState = getTargetBlockState(guiValuesHolder, clickAction.getPlayer());
                                                 targetBlockState.setState(blockData);

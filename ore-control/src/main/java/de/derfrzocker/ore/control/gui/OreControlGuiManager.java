@@ -197,14 +197,13 @@ public class OreControlGuiManager implements Listener {
             return;
         }
 
-        Bukkit.getScheduler().runTask(plugin, () -> {
-            InventoryType type = event.getPlayer().getOpenInventory().getType();
-            if (type == InventoryType.CRAFTING || type == InventoryType.CREATIVE) {
-                playerGuiData.remove(event.getPlayer());
-                oreControlManager.getConfigManager().saveAndReload();
-                oreControlManager.onValueChange();
-            }
-        });
+        InventoryType type = event.getPlayer().getOpenInventory().getType();
+
+        if (type == InventoryType.CRAFTING || type == InventoryType.CREATIVE) {
+            playerGuiData.remove(event.getPlayer());
+            oreControlManager.getConfigManager().saveAndReload();
+            oreControlManager.onValueChange();
+        }
     }
 
     private InventoryGui register(InventoryGui inventoryGui) {
